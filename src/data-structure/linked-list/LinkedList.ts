@@ -37,43 +37,43 @@ class LinkedList<T> {
         return this._size;
     }
 
-    public add(node: Node<T>): Node<T> {
-        if (this.isEmpty()) this.setNodeAtBeginning(node);
-        else this.setNodeAtEnd(node);
+    public add(element: T): T {
+        if (this.isEmpty()) this.setElementAtBeginning(element);
+        else this.setElementAtEnd(element);
         this._size++;
-        return node;
+        return element;
     }
 
-    private setNodeAtBeginning(node: Node<T>): void {
-        let helpNode = this.firstNode;
-        this.firstNode = node;
-        this.firstNode.nextNode = helpNode;
+    private setElementAtBeginning(element: T): void {
+        let startNode: Node<T> | null = this.firstNode;
+        this.firstNode = new Node(element);
+        this.firstNode.nextNode = startNode;
     }
 
-    private setNodeAtEnd(node: Node<T>): void {
-        let helpNode = this.getNodeAtEnd();
-        helpNode.nextNode = node;
+    private setElementAtEnd(element: T): void {
+        let lastNode = this.getNodeAtEnd();
+        lastNode.nextNode = new Node(element);
     }
 
     private getNodeAtEnd(): Node<T> {
-        let helpNode = this.firstNode;
-        while (helpNode?.nextNode !== null) {
-            if (helpNode !== null) helpNode = helpNode.nextNode;
+        let nextNode: Node<T> | null = this.firstNode;
+        while (nextNode !== null && nextNode.nextNode !== null) {
+            if (nextNode !== null) nextNode = nextNode.nextNode;
         }
-        return helpNode;
+        return nextNode;
     }
 
-    public pop(): Node<T> {
+    public pop(): T {
         if (this.isEmpty()) throw new Error('You can not remove from a empty list.');
-        let removeNode = this.helpPopNode();
+        let removeNode: Node<T> | null = this.helpPopNode();
         this._size--;
-        return removeNode;
+        return removeNode.value;
     }
 
     private helpPopNode(): Node<T> {
-        let currentNode = this.firstNode;
-        let previousNode = null;
-        while (currentNode?.nextNode !== null) {
+        let currentNode: Node<T> | null = this.firstNode;
+        let previousNode: Node<T> | null = null;
+        while (currentNode !== null && currentNode.nextNode !== null) {
             if (currentNode !== null) { 
                 previousNode = currentNode;
                 currentNode = currentNode.nextNode;
@@ -83,26 +83,26 @@ class LinkedList<T> {
         return currentNode;
     }
 
-    public getFirstNode(): Node<T> {
+    public getFirstNode(): T {
         if (this.firstNode === null) throw new Error('The list is empty.');
-        return this.firstNode;
+        return this.firstNode.value;
     }
 
-    public getLastNode(): Node<T> {
+    public getLastNode(): T {
         if (this.isEmpty()) throw new Error('The list is empty.');                                  
         let lastNode = this.getNodeAtEnd();
-        return lastNode;
+        return lastNode.value;
     }
 
-    public getNode(index: number): Node<T> {
+    public getElement(index: number): T {
         if (this.isEmpty()) throw new Error('The list is empty.');
         if(index < 0 || index >= this._size) throw new Error('The index value is not a valide number');
-        return this.getNodeByIndex(index);
+        return this.getNodeByIndex(index).value;
     }
 
     private getNodeByIndex(index: number): Node<T> {
         if(index === 0 && this.firstNode !== null) return this.firstNode;
-        if(this._size === (index - 1)) return this.getLastNode();
+        if(this._size === (index - 1)) return this.getNodeAtEnd();
         let indexNode = this.firstNode;
         let countNodes = 0;
         while (indexNode?.nextNode !== null) {
@@ -115,4 +115,4 @@ class LinkedList<T> {
     }
 }
 
-export { LinkedList, Node };
+export default LinkedList;
