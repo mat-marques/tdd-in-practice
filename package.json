@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "npx tsc && node ./build/src",
-    "test:linked-list": "jest ./data-structure/linked-list/linked-list.test.ts"
+    "test:linked-list": "jest ./data-structure/linked-list/linked-list.test.ts",
+    "test:queue": "jest ./data-structure/queue/queue.test.ts"
   },
   "author": "Matheus Augusto Marques",
   "license": "ISC",
