@@ -9,9 +9,9 @@ test('Check size of LinkedList', () => {
 });
 
 
-test('add item on a LinkedList', () => {
+test('Add item on a LinkedList', () => {
     let list = new LinkedList<number>();
-    expect(list.add(new Node<number>(1))).toBe(true);
+    expect(list.add(new Node<number>(1)).value).toBe(1);
 });
 
 test('Get a item on a empty LinkedList', () => {
@@ -60,7 +60,7 @@ test('Remove multiple itens from a LinkedList', () => {
 });
 
 
-test('add multiple itens on LinkedList', () => {
+test('Add multiple itens on LinkedList and check size', () => {
     let list = new LinkedList<number>();
     list.add(new Node<number>(1));
     list.add(new Node<number>(2));
@@ -120,7 +120,7 @@ test('Test a string LinkedList', () => {
     expect(() => list.getNode(10)).toThrow();
 });
 
-test('Test a myObject LinkedList', () => {
+test('Test a LinkedList with a object as type', () => {
     type myObject = {x: number, y: number};
 
     let list = new LinkedList<myObject>();

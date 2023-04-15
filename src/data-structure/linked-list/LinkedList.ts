@@ -37,11 +37,11 @@ class LinkedList<T> {
         return this._size;
     }
 
-    public add(node: Node<T>): Boolean {
+    public add(node: Node<T>): Node<T> {
         if (this.isEmpty()) this.setNodeAtBeginning(node);
         else this.setNodeAtEnd(node);
         this._size++;
-        return true;
+        return node;
     }
 
     private setNodeAtBeginning(node: Node<T>): void {
