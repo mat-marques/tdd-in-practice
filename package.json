@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx tsc && node ./build/src",
+    "start": "npx tsc --project tsconfig.build.json && node ./build/index.js",
     "test": "jest",
     "test:linked-list": "jest ./data-structure/linked-list/linked-list.test.ts",
     "test:queue": "jest ./src/data-structure/queue/queue.test.ts",
