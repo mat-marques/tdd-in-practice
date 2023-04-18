@@ -32,7 +32,9 @@ TDD é uma metodologia que permite que desenvolvamos a nossa implementação atr
 3. Fazer uma pequena mudança
 4. Rodar todos os testes e ver todos funcionando
 5. Refatorar para remover duplicações.
+
 Isso é popularmente resumido em três passos: 
+
 1. Testar (Red)
 2. Codificar (Green)
 3. Refatorar (Blue)
@@ -45,7 +47,7 @@ Para essa série de exercícios foi usado o livro: Test Driven Development: By E
 
 #### Padrões para TDD
 
-A seguir elenco em resumo e sintetizado alguns padrões que o livro descreve.
+A seguir elenco em forma resumida alguns padrões que o livro descreve.
 
 #### Padrões gerais
 - Como deve ser um teste?
