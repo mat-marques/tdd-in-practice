@@ -10,7 +10,8 @@
     "test:queue": "jest ./src/data-structure/queue/queue.test.ts",
     "test:stack": "jest ./src/data-structure/stack/stack.test.ts",
     "test:financial": "jest ./src/financial/financial.test.ts",
-    "test:fibonacci": "jest ./src/fibonacci/fibonacci.test.ts"
+    "test:fibonacci": "jest ./src/fibonacci/fibonacci.test.ts",
+    "test:decimal-roman": "jest ./src/decimal-roman/decimal-roman.test.ts"
   },
   "author": "Matheus Augusto Marques",
   "license": "ISC",
