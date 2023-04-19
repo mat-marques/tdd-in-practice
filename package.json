@@ -9,7 +9,8 @@
     "test:linked-list": "jest ./data-structure/linked-list/linked-list.test.ts",
     "test:queue": "jest ./src/data-structure/queue/queue.test.ts",
     "test:stack": "jest ./src/data-structure/stack/stack.test.ts",
-    "test:financial": "jest ./src/financial/financial.test.ts"
+    "test:financial": "jest ./src/financial/financial.test.ts",
+    "test:fibonacci": "jest ./src/fibonacci/fibonacci.test.ts"
   },
   "author": "Matheus Augusto Marques",
   "license": "ISC",
